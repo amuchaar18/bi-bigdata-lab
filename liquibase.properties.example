@@ -1,0 +1,5 @@
+# NO coloques tokens reales en este archivo ni lo subas con credenciales.
+changelog-file=changelog/db.changelog-master.sql
+# url=jdbc:databricks://HOST:443/default;AuthMech=3;httpPath=HTTP_PATH;ConnCatalog=CATALOGO;ConnSchema=default;
+# username=token
+# password=TOKEN
