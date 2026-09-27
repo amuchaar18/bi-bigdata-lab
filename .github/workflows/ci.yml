@@ -3,6 +3,8 @@ name: CI - Validate Database Changes
 on:
   pull_request:
     branches: [ main ]
+    paths:
+      - 'changelog/**'
 
 jobs:
   validate:
