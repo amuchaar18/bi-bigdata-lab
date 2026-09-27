@@ -1,0 +1,57 @@
+COMPARACIÓN DE MODELOS DIMENSIONALES
+Caso: UCV Retail
+
+STAR SCHEMA
+
+El modelo Star Schema organiza una tabla de hechos central y varias dimensiones relacionadas directamente con ella. Las dimensiones se mantienen relativamente desnormalizadas, lo que simplifica las consultas y reduce la cantidad de joins necesarios.
+
+Aplicación al caso:
+En UCV Retail, FACT_SALES constituye la tabla de hechos central y se relaciona directamente con DIM_DATE, DIM_PRODUCT, DIM_STORE y DIM_CUSTOMER.
+
+Ventaja:
+Facilita el análisis de ventas y simplifica las consultas utilizadas por herramientas de Business Intelligence.
+
+Uso en el laboratorio:
+Es el modelo principal seleccionado para UCV Retail.
+
+
+SNOWFLAKE SCHEMA
+
+El modelo Snowflake normaliza parcialmente las dimensiones, separando determinados atributos en tablas relacionadas.
+
+Aplicación al caso:
+Por ejemplo, la información de categoría y subcategoría de DIM_PRODUCT podría separarse en tablas adicionales relacionadas con la dimensión de producto.
+
+Ventaja:
+Puede reducir la redundancia de determinados datos dentro de las dimensiones.
+
+Uso en el laboratorio:
+Se analiza únicamente como comparación conceptual; no es el modelo principal seleccionado.
+
+
+CONSTELLATION SCHEMA
+
+El modelo Constellation utiliza múltiples tablas de hechos que pueden compartir dimensiones.
+
+Aplicación al caso:
+Si UCV Retail incorporara el proceso de inventario, podría crearse una tabla FACT_INVENTORY que comparta DIM_DATE, DIM_PRODUCT y DIM_STORE con FACT_SALES.
+
+Ejemplo conceptual:
+
+FACT_SALES
+- DIM_DATE
+- DIM_PRODUCT
+- DIM_STORE
+- DIM_CUSTOMER
+
+FACT_INVENTORY
+- DIM_DATE
+- DIM_PRODUCT
+- DIM_STORE
+
+Ventaja:
+Permite representar y analizar múltiples procesos de negocio utilizando dimensiones compartidas.
+
+CONCLUSIÓN
+
+Para el proceso de ventas analizado en este laboratorio se utiliza Star Schema debido a su estructura de una tabla de hechos central relacionada directamente con las dimensiones. Snowflake se considera como una alternativa con dimensiones parcialmente normalizadas, mientras que Constellation sería apropiado conceptualmente si se incorporaran otros procesos de negocio, como inventario.

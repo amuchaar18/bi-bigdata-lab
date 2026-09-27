@@ -1,0 +1,45 @@
+UNITY CATALOG Y CAPA GOLD
+Caso: UCV Retail
+
+ORGANIZACIÓN ANALÍTICA EN UNITY CATALOG
+
+El modelo dimensional diseñado para UCV Retail pertenece conceptualmente a la capa Gold de la arquitectura Medallion, debido a que está orientado al análisis de información y al consumo mediante herramientas de Business Intelligence.
+
+En Unity Catalog, los objetos analíticos se organizarían conceptualmente de la siguiente manera:
+
+ucv_bi.gold.dim_date
+ucv_bi.gold.dim_product
+ucv_bi.gold.dim_store
+ucv_bi.gold.dim_customer
+ucv_bi.gold.fact_sales
+
+
+¿POR QUÉ EL MODELO PERTENECE A LA CAPA GOLD?
+
+Propósito analítico:
+Las tablas dimensionales y la tabla de hechos fueron diseñadas para responder preguntas de negocio relacionadas con ventas, productos, clientes, tiendas y períodos de tiempo.
+
+Nivel de transformación:
+A diferencia de la capa Bronze, que conserva datos en un estado cercano a su origen, y de la capa Silver, donde los datos son limpiados e integrados, la capa Gold organiza la información en estructuras preparadas para el análisis.
+
+Consumo de Business Intelligence:
+El Star Schema facilita la creación de consultas analíticas, indicadores, reportes y visualizaciones de Business Intelligence utilizando FACT_SALES y sus dimensiones asociadas.
+
+
+RELACIÓN CON LA ARQUITECTURA MEDALLION
+
+Bronze:
+Contiene los datos provenientes de las fuentes en un estado cercano al original.
+
+Silver:
+Contiene datos limpiados, transformados e integrados.
+
+Gold:
+Contiene estructuras analíticas preparadas para responder preguntas de negocio y ser utilizadas por soluciones de Business Intelligence.
+
+Por esta razón, FACT_SALES, DIM_DATE, DIM_PRODUCT, DIM_STORE y DIM_CUSTOMER corresponden conceptualmente a la capa Gold.
+
+
+ACLARACIÓN DEL LABORATORIO 04
+
+En este laboratorio se realiza únicamente el diseño lógico del modelo dimensional. No se crean físicamente las tablas en Databricks ni se ejecutan cambios de Liquibase. La implementación física del modelo se realizará posteriormente.

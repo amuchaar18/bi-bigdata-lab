@@ -1,0 +1,51 @@
+EVIDENCIA 4 – JERARQUÍAS ANALÍTICAS
+
+Caso: UCV Retail
+Proceso de negocio: Ventas
+
+JERARQUÍA DE TIEMPO
+
+Año → Trimestre → Mes → Día
+
+Esta jerarquía permite navegar desde un nivel general hasta uno más detallado. Por ejemplo, se pueden analizar primero las ventas de un año, luego por trimestre, después por mes y finalmente por día.
+
+
+JERARQUÍA DE PRODUCTO
+
+Categoría → Subcategoría → Producto
+
+Esta jerarquía permite analizar las ventas comenzando por una categoría de productos, profundizar hacia una subcategoría y finalmente observar el comportamiento de cada producto.
+
+
+JERARQUÍA DE UBICACIÓN
+
+País → Región → Ciudad → Tienda
+
+Esta jerarquía permite analizar las ventas desde el nivel geográfico más general hasta el nivel específico de cada tienda.
+
+
+APLICACIÓN DE LAS JERARQUÍAS EN PREGUNTAS ANALÍTICAS
+
+Pregunta Q01:
+¿Cuál es el monto total de ventas por mes?
+
+Jerarquía utilizada:
+Año → Trimestre → Mes → Día
+
+Aplicación:
+La jerarquía de tiempo permite realizar operaciones de drill-down desde el año hacia trimestre y mes para analizar con mayor detalle la evolución de las ventas. También permite realizar roll-up para regresar desde un nivel detallado hacia un nivel temporal más general.
+
+
+Pregunta Q02:
+¿Cuál es el monto total de ventas por tienda y ciudad?
+
+Jerarquía utilizada:
+País → Región → Ciudad → Tienda
+
+Aplicación:
+La jerarquía de ubicación permite realizar drill-down desde país hacia región, ciudad y tienda para identificar las ubicaciones con mayor o menor monto de ventas. Mediante roll-up es posible consolidar nuevamente los resultados desde tienda o ciudad hacia región y país.
+
+
+JUSTIFICACIÓN TÉCNICA
+
+Las jerarquías facilitan la navegación multidimensional de la información y permiten analizar los datos con diferentes niveles de granularidad. El drill-down permite avanzar desde información agregada hacia información más detallada, mientras que el roll-up permite consolidar la información desde niveles específicos hacia niveles superiores.

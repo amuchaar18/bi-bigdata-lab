@@ -1,0 +1,50 @@
+EVIDENCIA 2 – IDENTIFICACIÓN DEL PROCESO, HECHOS Y MEDIDAS
+
+Caso: UCV Retail
+
+PROCESO DE NEGOCIO
+
+El proceso de negocio seleccionado es VENTAS, debido a que las preguntas planteadas por la gerencia están relacionadas con las transacciones de venta realizadas por la empresa. Este proceso permite analizar y comparar montos de venta, cantidades de productos vendidos, clientes, tiendas y períodos de tiempo.
+
+TABLA DE HECHOS
+
+La tabla de hechos definida es FACT_SALES. Esta tabla representa las transacciones de ventas y concentra las claves que permiten relacionar cada venta con las dimensiones de tiempo, producto, tienda y cliente.
+
+Campos de FACT_SALES:
+
+date_key
+product_key
+store_key
+customer_key
+quantity
+unit_price
+sales_amount
+
+HECHOS Y MEDIDAS
+
+quantity:
+Es una medida que representa la cantidad de unidades vendidas en una transacción.
+
+unit_price:
+Es una medida contextual que representa el precio unitario del producto asociado a la venta.
+
+sales_amount:
+Es una medida que representa el monto de venta generado por la transacción.
+
+REFERENCIAS A DIMENSIONES
+
+date_key:
+Referencia a la dimensión DIM_DATE.
+
+product_key:
+Referencia a la dimensión DIM_PRODUCT.
+
+store_key:
+Referencia a la dimensión DIM_STORE.
+
+customer_key:
+Referencia a la dimensión DIM_CUSTOMER.
+
+JUSTIFICACIÓN TÉCNICA
+
+FACT_SALES funciona como el centro del modelo dimensional porque registra los eventos correspondientes al proceso de ventas y contiene las medidas cuantitativas que pueden ser analizadas. Las claves date_key, product_key, store_key y customer_key permiten relacionar cada hecho con su contexto de tiempo, producto, tienda y cliente. De esta manera, el modelo permite responder las preguntas analíticas de la gerencia mediante agregaciones y comparaciones de quantity y sales_amount desde diferentes dimensiones.

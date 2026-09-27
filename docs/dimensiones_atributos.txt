@@ -1,0 +1,61 @@
+EVIDENCIA 3 – DIMENSIONES Y ATRIBUTOS
+
+Caso: UCV Retail
+Proceso de negocio: Ventas
+
+DIM_DATE – DIMENSIÓN TIEMPO
+
+La dimensión DIM_DATE permite analizar las ventas en diferentes períodos de tiempo y realizar operaciones de navegación temporal.
+
+Atributos:
+date_key: clave analítica de la dimensión.
+full_date: fecha completa.
+day: día.
+month: número de mes.
+month_name: nombre del mes.
+quarter: trimestre.
+year: año.
+
+
+DIM_PRODUCT – DIMENSIÓN PRODUCTO
+
+La dimensión DIM_PRODUCT contiene la información descriptiva de los productos y permite analizar las ventas según producto, marca, subcategoría y categoría.
+
+Atributos:
+product_key: clave analítica de la dimensión.
+product_id: identificador del producto.
+product_name: nombre del producto.
+brand: marca.
+subcategory: subcategoría.
+category: categoría.
+
+
+DIM_STORE – DIMENSIÓN TIENDA
+
+La dimensión DIM_STORE contiene información de las tiendas y su ubicación geográfica, permitiendo analizar las ventas por tienda, ciudad, región y país.
+
+Atributos:
+store_key: clave analítica de la dimensión.
+store_id: identificador de la tienda.
+store_name: nombre de la tienda.
+city: ciudad.
+region: región.
+country: país.
+
+
+DIM_CUSTOMER – DIMENSIÓN CLIENTE
+
+La dimensión DIM_CUSTOMER contiene información descriptiva de los clientes y permite analizar las ventas según cliente, segmento y ubicación.
+
+Atributos:
+customer_key: clave analítica de la dimensión.
+customer_id: identificador del cliente.
+customer_name: nombre del cliente.
+segment: segmento del cliente.
+city: ciudad.
+country: país.
+
+
+JUSTIFICACIÓN TÉCNICA
+
+Las dimensiones proporcionan el contexto descriptivo necesario para analizar los hechos registrados en FACT_SALES. DIM_DATE permite el análisis temporal; DIM_PRODUCT permite estudiar el comportamiento de productos y categorías; DIM_STORE permite analizar el desempeño de las tiendas y su distribución geográfica; y DIM_CUSTOMER permite segmentar las ventas según las características de los clientes. Los campos terminados en _key representan claves analíticas conceptuales que permiten relacionar las dimensiones con la tabla de hechos.

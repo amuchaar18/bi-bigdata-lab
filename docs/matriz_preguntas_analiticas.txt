@@ -1,0 +1,43 @@
+EVIDENCIA 1 – MATRIZ DE PREGUNTAS ANALÍTICAS
+Caso: UCV Retail
+Proceso de negocio: Ventas
+
+Q01. ¿Cuál es el monto total de ventas por mes?
+Métrica: sales_amount
+Dimensión: Tiempo
+Decisión de negocio: Identificar los meses con mayores y menores ingresos para mejorar la planificación comercial.
+
+Q02. ¿Cuál es el monto total de ventas por tienda y ciudad?
+Métrica: sales_amount
+Dimensión: Tienda / Ubicación
+Decisión de negocio: Comparar el desempeño de las tiendas y determinar qué ubicaciones generan mayores ingresos.
+
+Q03. ¿Cuáles son los productos con mayor cantidad de unidades vendidas?
+Métrica: quantity
+Dimensión: Producto
+Decisión de negocio: Identificar los productos de mayor demanda para mejorar la planificación de inventario.
+
+Q04. ¿Cuál es el ticket promedio por tienda?
+Métrica: average_ticket
+Dimensión: Tienda
+Decisión de negocio: Comparar el valor promedio de las ventas entre las diferentes tiendas.
+
+Q05. ¿Cuál es el monto de ventas por segmento de cliente?
+Métrica: sales_amount
+Dimensión: Cliente
+Decisión de negocio: Identificar los segmentos de clientes que generan mayores ingresos y orientar estrategias comerciales.
+
+Q06. ¿Cuál es el monto total de ventas por categoría y subcategoría de producto?
+Métrica: sales_amount
+Dimensión: Producto
+Decisión de negocio: Determinar qué categorías y subcategorías generan mayores ingresos para apoyar decisiones de surtido.
+
+Q07. ¿Cuál es la cantidad de unidades vendidas por región y ciudad?
+Métrica: quantity
+Dimensión: Tienda / Ubicación
+Decisión de negocio: Identificar las zonas geográficas con mayor volumen de ventas para apoyar la planificación comercial.
+
+Q08. ¿Cuál es el monto total de ventas por trimestre y categoría de producto?
+Métrica: sales_amount
+Dimensiones: Tiempo / Producto
+Decisión de negocio: Analizar la evolución trimestral de las categorías para detectar tendencias y apoyar la planificación de ventas.
