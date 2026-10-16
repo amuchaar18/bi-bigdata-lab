@@ -85,3 +85,37 @@ CREATE TABLE IF NOT EXISTS workspace.gold.fact_sales (
 USING DELTA;
 
 --rollback DROP TABLE IF EXISTS workspace.gold.fact_sales;
+--changeset estudiante:008
+
+CREATE TABLE IF NOT EXISTS workspace.bronze.sales_raw (
+    sale_id BIGINT,
+    sale_date DATE,
+    product_id BIGINT,
+    customer_id BIGINT,
+    store_id BIGINT,
+    quantity INT,
+    unit_price DECIMAL(12,2)
+)
+USING DELTA;
+
+--rollback DROP TABLE IF EXISTS workspace.bronze.sales_raw;
+--changeset estudiante:009
+
+CREATE SCHEMA IF NOT EXISTS workspace.silver;
+
+--rollback DROP SCHEMA IF EXISTS workspace.silver;
+--changeset estudiante:010
+
+CREATE TABLE IF NOT EXISTS workspace.silver.sales_clean (
+    sale_id BIGINT,
+    sale_date DATE,
+    product_id BIGINT,
+    customer_id BIGINT,
+    store_id BIGINT,
+    quantity INT,
+    unit_price DECIMAL(12,2),
+    sales_amount DECIMAL(14,2)
+)
+USING DELTA;
+
+--rollback DROP TABLE IF EXISTS workspace.silver.sales_clean;
