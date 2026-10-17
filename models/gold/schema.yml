@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: dim_customer_dbt
+    columns:
+      - name: customer_key
+        data_tests:
+          - not_null
+          - unique
+
+  - name: dim_product_dbt
+    columns:
+      - name: product_key
+        data_tests:
+          - not_null
+          - unique
+
+  - name: dim_store_dbt
+    columns:
+      - name: store_key
+        data_tests:
+          - not_null
+          - unique
+
+  - name: dim_date_dbt
+    columns:
+      - name: date_key
+        data_tests:
+          - not_null
+          - unique
+
+  - name: fact_sales_dbt
+    columns:
+      - name: sale_id
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_key
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_customer_dbt')
+                field: customer_key
+      - name: product_key
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_product_dbt')
+                field: product_key
+      - name: store_key
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_store_dbt')
+                field: store_key
+      - name: date_key
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_date_dbt')
+                field: date_key
